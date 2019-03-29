@@ -23,7 +23,7 @@ public class ConnectDB {
                                                 String userName, String password) throws SQLException,
             ClassNotFoundException {
 
-        String connectionURL = "jdbc:mysql://" + hostName + ":3306/" + dbName;
+        String connectionURL = "jdbc:mysql://" + hostName + ":3306/" + dbName +"?useSSL=false";
 
         Connection conn = DriverManager.getConnection(connectionURL, userName,
                 password);

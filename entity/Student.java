@@ -1,8 +1,8 @@
 package Library.entity;
 
-import java.sql.Date;
+import java.util.Date;
 
-public class Student {
+public class Student implements Comparable<Student>{
     private int studentId;
     private String name;
     private String fullName;
@@ -11,6 +11,19 @@ public class Student {
     private Date birthDay;
 
     public Student() {
+    }
+
+    public Student(int studentId, String name) {
+        this.studentId = studentId;
+        this.name = name;
+    }
+
+    public Student(int studentId, String name, String fullName, int age, String gender) {
+        this.studentId = studentId;
+        this.name = name;
+        this.fullName = fullName;
+        this.age = age;
+        this.gender = gender;
     }
 
     public Student(int studentId, String name, String fullName, int age, String gender, Date birthDay) {
@@ -80,5 +93,10 @@ public class Student {
 
     public void setBirthDay(Date birthDay) {
         this.birthDay = birthDay;
+    }
+
+    @Override
+    public int compareTo(Student o) {
+        return o.getName().compareTo(this.getName());
     }
 }
